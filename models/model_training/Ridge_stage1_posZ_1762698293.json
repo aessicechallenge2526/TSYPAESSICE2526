@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "+Z",
+    "stage": 1,
+    "model_name": "Ridge",
+    "timestamp": 1762698293,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 17892.94750623614,
+    "RMSE": 42615.83177998587,
+    "n_val": 606,
+    "model_file": "model_artifacts\\Ridge_stage1_posZ_1762698293.pkl",
+    "model_size_kb": 1.55
+  },
+  "sha256": "cde2e838c8c32a349a1576812b539fe84e934c584a9d0ad3518627cfaec998b9"
+}

@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "Y",
+    "stage": 1,
+    "model_name": "LightGBM",
+    "timestamp": 1762698290,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 69903.24232663531,
+    "RMSE": 149571.9624165059,
+    "n_val": 606,
+    "model_file": "model_artifacts\\LightGBM_stage1_Y_1762698290.pkl",
+    "model_size_kb": 490.04
+  },
+  "sha256": "e5b783e3367c0c7afcf9e368e0ceff8e8c9fa8320c29b223518a9aaee973f91a"
+}

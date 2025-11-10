@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-X",
+    "stage": 1,
+    "model_name": "ARIMAX(2,0,1)",
+    "timestamp": 1762698760,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 82861.64353180797,
+    "RMSE": 178883.80522145878,
+    "n_val": 606,
+    "model_file": null,
+    "model_size_kb": 0.0
+  },
+  "sha256": "0d69f280ec329e3409c3106edf9c1bd582c408afd1fc7ddd6be5b3e6239d4860"
+}

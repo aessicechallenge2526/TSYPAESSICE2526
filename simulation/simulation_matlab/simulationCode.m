@@ -1,0 +1,120 @@
+%clear;
+
+%% --- Configuration ---
+modelName = 'asbCubeSat';
+load_system(modelName);
+
+% Stop any previous simulation
+if strcmp(get_param(modelName,'SimulationStatus'),'running')
+    set_param(modelName,'SimulationCommand','stop');
+    pause(0.5); % wait for clean stop
+end
+
+% Open model (no 3D viewer needed)
+open_system(modelName);
+
+% Configure simulation parameters
+set_param(modelName, ...
+    'Solver','ode4', ...
+    'StopTime','15000', ... % adjust as needed
+    'SimulationMode','normal', ...
+    'ReturnWorkspaceOutputs','on', ...
+    'SaveFormat','StructureWithTime');
+
+%% --- Run simulation ---
+fprintf('Running simulation...\n');
+simOut = sim(modelName, 'SimulationMode','normal');
+
+% Extract StatesOut from simulation output
+statesOut = simOut.get('StatesOut');
+
+% Extract time vector, position and velocity data
+simTime = statesOut.SunAngle.Time;        % seconds
+sunAngleData = statesOut.SunAngle.Data;   % Nx1 degrees
+
+%% --- Create satelliteScenario with manual stepping ---
+
+startTime = datetime(2019, 1, 4, 12, 0, 0);
+stopTime = startTime + seconds(simTime(end));
+sc = satelliteScenario(startTime, stopTime, mean(diff(simTime)), 'AutoSimulate', true);
+
+a    = 6786233.13;        % semi-major axis [m]
+ecc  = 0.0010537;          % eccentricity
+incl = 51.7519;            % inclination [deg]
+RAAN = 95.2562;            % RAAN [deg]
+argp = 93.4872;            % argument of perigee [deg]
+nu   = 302.9234;           % true anomaly [deg]
+
+% Create CubeSat in scenario
+sat = satellite(sc, a, ecc, incl, RAAN, argp, nu, 'Name', 'CubeSat');
+
+
+
+irradianceVals = zeros(length(simTime), 1);
+for k = 1:length(simTime)
+    sunAngle = sunAngleData(k);
+    irradianceVals(k) = max(0, 1361 * cosd(sunAngle));  % W/m²
+
+end
+
+open_system('simulationElectronique');
+
+irradiance_ts = timeseries(irradianceVals, simTime);
+irradiance_ts.Name = 'Irradiance';
+
+irradianceInput = irradiance_ts;
+
+set_param('simulationElectronique', ...
+    'StopTime','15000', ... % adjust as needed
+    'SimulationMode','normal', ...
+    'ReturnWorkspaceOutputs','on', ...
+    'SaveFormat','StructureWithTime');
+
+electronicsSimOut = sim('simulationElectronique');
+
+powerVals = zeros(length(simTime), 1);
+
+figure;
+h = animatedline('Color', 'b', 'LineWidth', 2);
+xlabel('Time (s)');
+ylabel('Power (W)');
+title('Solar Cell Power Output');
+grid on;
+
+voltage_ts = electronicsSimOut.get('voltage'); 
+current_ts = electronicsSimOut.get('current');
+
+voltage = voltage_ts.Data;
+current = current_ts.Data;
+
+time = voltage_ts.Time;
+
+%% --- Open Scenario Viewer ---
+viewer = satelliteScenarioViewer(sc);  % 3D interactive viewer
+
+fprintf('Replaying simulation in satelliteScenario...\n');
+play(sc, PlaybackSpeedMultiplier=80);
+
+for k = 1:length(simTime)
+    % Convert simulation seconds to absolute datetime
+    currentSimTime = startTime + seconds(simTime(k));
+ 
+    % Get electronics data
+    voltage_k = voltage(k);
+    current_k = current(k);
+    powerVals(k) = voltage_k * current_k;
+
+    % Update animated power plot
+    addpoints(h, simTime(k), powerVals(k));
+    drawnow;
+
+    fprintf('t=%.1f s | Voltage=%.2f V | Current=%.2f A\n', ...
+        simTime(k), voltage_k, current_k);
+
+    % Optional smooth update delay (scaled to playback speed)
+    if k < length(simTime)
+        pause(mean(diff(simTime))*2);
+    end
+end
+
+fprintf('Simulation replay finished.\n');

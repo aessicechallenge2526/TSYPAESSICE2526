@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-Z",
+    "stage": 1,
+    "model_name": "RandomForest",
+    "timestamp": 1762698292,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 56493.99637135664,
+    "RMSE": 110718.10112258024,
+    "n_val": 606,
+    "model_file": "model_artifacts\\RandomForest_stage1_negZ_1762698292.pkl",
+    "model_size_kb": 7345.32
+  },
+  "sha256": "7461b17a4af95eebdd40a9f677395201d08d347f36e44410b07db23db060acad"
+}

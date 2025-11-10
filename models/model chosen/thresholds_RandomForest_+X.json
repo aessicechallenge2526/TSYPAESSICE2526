@@ -1,0 +1,16 @@
+{
+  "panel": "+X",
+  "stage": "stage2",
+  "model": "RandomForest",
+  "thresholds": {
+    "T_arm": 607264.549964453,
+    "T_disarm": 425085.18497511704,
+    "p95_abs": 332275.0246845668,
+    "p99_abs": 607264.549964453,
+    "res_mean": 28396.3875323807,
+    "res_std": 139017.99518822684,
+    "false_arm_rate_val": 0.01155115511551155,
+    "consecutive_ge_2": 3
+  },
+  "timestamp": 1762700030
+}

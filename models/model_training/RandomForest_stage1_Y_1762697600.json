@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "Y",
+    "stage": 1,
+    "model_name": "RandomForest",
+    "timestamp": 1762697600,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 66568.29938877776,
+    "RMSE": 143093.88881865892,
+    "n_val": 606,
+    "model_file": "model_artifacts\\RandomForest_stage1_Y_1762697600.pkl",
+    "model_size_kb": 3326.35
+  },
+  "sha256": "ced0195af046b57f4601e0e6409855581a2d05b29330d12a277abcd4d63c1a1b"
+}

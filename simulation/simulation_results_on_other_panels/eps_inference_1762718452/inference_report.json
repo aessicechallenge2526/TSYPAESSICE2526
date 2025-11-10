@@ -1,0 +1,61 @@
+{
+  "panel": "+X",
+  "split_strategy": "60_20_20",
+  "timestamp": 1762718452,
+  "power": {
+    "model": "RandomForest_Stage4Simple",
+    "n_features": 10,
+    "feature_names": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12",
+      "Power_diff_lag1",
+      "Power_diff_lag2",
+      "Power_diff_lag3",
+      "Power_diff_lag6",
+      "Power_diff_lag12"
+    ],
+    "metrics": {
+      "mae": 70600.30088851397,
+      "rmse": 137830.85028625396,
+      "res_mean": 36986.336588742866,
+      "res_std": 132775.5783130918,
+      "abs_res_p95": 348424.08805393893,
+      "abs_res_p99": 481544.4764453817
+    },
+    "latency_us": 59357.83539991826,
+    "model_size_kb": 2498.056640625,
+    "n_nodes": 34996,
+    "train_time_s": 0.22422313690185547
+  },
+  "voltage": {
+    "model": "RandomForest_VoltagePredict",
+    "n_features": 5,
+    "feature_names": [
+      "Volt_lag1",
+      "Volt_lag2",
+      "Volt_lag3",
+      "Volt_lag6",
+      "Volt_lag12"
+    ],
+    "metrics": {
+      "mae": 146.46405619908964,
+      "rmse": 522.295159100971,
+      "res_mean": 38.51391729661982,
+      "res_std": 520.873220078339,
+      "abs_res_p95": 729.7204857219579,
+      "abs_res_p99": 3229.608882341505
+    },
+    "latency_us": 60136.459399946034,
+    "model_size_kb": 2512.3505859375,
+    "n_nodes": 35200,
+    "train_time_s": 0.21706891059875488
+  },
+  "combined": {
+    "total_latency_us": 119494.29479986429,
+    "total_size_kb": 5010.4072265625,
+    "headroom_5s": 41.84300186359758
+  }
+}

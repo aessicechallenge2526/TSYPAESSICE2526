@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-Z",
+    "stage": 1,
+    "model_name": "ARIMA(2,0,1)",
+    "timestamp": 1762697601,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 302047.0654685753,
+    "RMSE": 407761.6823056661,
+    "n_val": 606,
+    "model_file": null,
+    "model_size_kb": 0.0
+  },
+  "sha256": "56a14cb6312d0fffc98ac6bfd32fc2a177a672883d943bebbf6c2a49770db6f9"
+}

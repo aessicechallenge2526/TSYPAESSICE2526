@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-Z",
+    "stage": 1,
+    "model_name": "XGBoost",
+    "timestamp": 1762698505,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 59185.00545413282,
+    "RMSE": 118776.60365685572,
+    "n_val": 606,
+    "model_file": "model_artifacts\\XGBoost_stage1_negZ_1762698505.pkl",
+    "model_size_kb": 531.07
+  },
+  "sha256": "adbde068f0286ff4334752a3521830227196c56cc782ffc3d6770dafb9c47abe"
+}

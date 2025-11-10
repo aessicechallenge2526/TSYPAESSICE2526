@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "panel": "+Z",
+    "stage": 1,
+    "model_name": "OCSVM_RFResiduals",
+    "timestamp": 1762698763,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "AnomalyRatePct": 21.45214521452145,
+    "model_file": null,
+    "model_size_kb": 0.0
+  },
+  "sha256": "4053f579d210cd9543d1b51f3c4d1c570123323c8be7c7b0742be9fe52e3b001"
+}

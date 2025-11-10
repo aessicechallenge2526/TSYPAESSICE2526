@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "+Z",
+    "stage": 1,
+    "model_name": "ElasticNet",
+    "timestamp": 1762698506,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 17880.35489826392,
+    "RMSE": 38276.49899728927,
+    "n_val": 606,
+    "model_file": "model_artifacts\\ElasticNet_stage1_posZ_1762698506.pkl",
+    "model_size_kb": 0.7
+  },
+  "sha256": "476438ed8e1ef00e1697367c3f629eae000179645bbeb77b1a5eedb3b531ba2f"
+}

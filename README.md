@@ -322,6 +322,25 @@ python fault_injection.py --scenario short_circuit
 ---
 
 ## 🧪 Testing & Validation
+### **MATLAB Simulation Tests**
+
+Simulate a CubeSat in Low Earth Orbit to extract realistic solar cell data. The workflow uses asbCubeSat in Simulink to compute orbital position and Sun angles, converts these to panel irradiance, and passes it through a GaaS solar cell model (Isc = 1 A, Voc = 2 V) to obtain voltage, current, and power. Optional noise can be added to mimic measurement variability. Results can be visualized and exported for analysis or inference testing. Required MATLAB add-ons: Simulink, Satellite Toolbox, and Simscape Electrical.
+
+![](./simulation/simulation_matlab/SolarArray.png)
+
+![](./simulation/simulation_matlab/CubeSatOrbitSimulation.png)
+
+To run the simulation simply run this on the MATLAB termainl
+```matlab
+simulationCode
+```
+
+Once ran once, the following line from simulationCode.m can be removed as compiling the CubeSat simulation takes a while
+```matlab
+simOut = sim(modelName, 'SimulationMode','normal');
+```
+![](./simulation/simulation_matlab/simulation.gif)
+
 
 ### **Simulation Tests** (`simulation/fault_injection.py`)
 ```python

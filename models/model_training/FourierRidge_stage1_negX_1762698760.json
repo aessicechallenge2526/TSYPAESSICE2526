@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-X",
+    "stage": 1,
+    "model_name": "FourierRidge",
+    "timestamp": 1762698760,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 297310.4847544629,
+    "RMSE": 439019.0638982798,
+    "n_val": 606,
+    "model_file": "model_artifacts\\FourierRidge_stage1_negX_1762698760.pkl",
+    "model_size_kb": 0.48
+  },
+  "sha256": "e8e4b4bb63ad5dc6aba4c80395ada3441079912c5a88560c86a3a5d682a39f46"
+}

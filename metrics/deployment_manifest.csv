@@ -1,6 +1,0 @@
-panel,recommended_stage,recommended_model,n_features,expected_mae,improvement_vs_naive
-Y,Stage 4,RandomForest,40,53287.61417921994,20.0%
-+X,Stage 4,RandomForest,40,56323.102276417805,19.0%
--Z,Stage 4,RandomForest,40,54956.83150193385,3.4%
--X,Stage 1,RandomForest,5,43264.860451046414,0.0%
-+Z,Stage 1,RandomForest,5,16768.95300564425,0.0%

@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-X",
+    "stage": 1,
+    "model_name": "ExtraTrees",
+    "timestamp": 1762698506,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 48017.757562616425,
+    "RMSE": 108293.42689662665,
+    "n_val": 606,
+    "model_file": "model_artifacts\\ExtraTrees_stage1_negX_1762698506.pkl",
+    "model_size_kb": 5440.1
+  },
+  "sha256": "bc7c57cec1287b60a33561b30a55baff6fb05b49365255fc64ef927910348a83"
+}

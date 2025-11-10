@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "-X",
+    "stage": 1,
+    "model_name": "NaivePersistence",
+    "timestamp": 1762697187,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 66004.37384933993,
+    "RMSE": 164777.75394229684,
+    "n_val": 606,
+    "model_file": null,
+    "model_size_kb": 0.0
+  },
+  "sha256": "b453d5baaf1b373e649e094715ef63f64effe85b34921260ae2daea1ee175db9"
+}

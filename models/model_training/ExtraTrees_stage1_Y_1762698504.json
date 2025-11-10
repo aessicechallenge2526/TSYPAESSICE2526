@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "panel": "Y",
+    "stage": 1,
+    "model_name": "ExtraTrees",
+    "timestamp": 1762698504,
+    "feature_columns": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12"
+    ],
+    "MAE": 70803.83328262033,
+    "RMSE": 150298.86713420987,
+    "n_val": 606,
+    "model_file": "model_artifacts\\ExtraTrees_stage1_Y_1762698504.pkl",
+    "model_size_kb": 5577.14
+  },
+  "sha256": "df04295e14b74c9ec5a79dadc6ce54d259fc4816cbdd38aab921b23f57375fcf"
+}
