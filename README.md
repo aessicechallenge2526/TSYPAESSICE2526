@@ -21,7 +21,7 @@ This system protects solar panels from catastrophic failures (short circuits, ho
 | **2. Electronics Only** | comparators + MOSFETs | `hardware/CIRCUIT_DESIGN.md` |
 | **3. AI Integration** | Random Forest (90μs inference) | `models/` + c_code |
 | **4. Space Readiness** | 3U volume, <200mW power, rad-tolerant | `hardware/Materials ` |
-| **5. Validation** | Cross-satellite testing (NEPALISAT→RAAVANA) | `notebooks/training_validation.ipynb` |
+| **5. Validation** | Cross-satellite testing (NEPALISAT→RAAVANA) | `notebooks` |
 | **6. Documentation** | Full schematics, code, test protocols | This repo |
 | **7. Integration** | Standard CubeSat EPS interface | stm32_package |
 
@@ -32,65 +32,52 @@ This system protects solar panels from catastrophic failures (short circuits, ho
 ## 📂 Repository Structure
 
 ```
-cubesat-solar-fdir/
+TSYPAESSICE2526/
 │
-├── README.md                          ← You are here
-├── docs/
-│   ├── IASS_EPS_FDIR_Report.pdf       ← 3-page technical report
-│   ├── failure_modes_analysis.md      ← CubeSat PV failure modes research
-│   ├── system_architecture.md         ← Block diagrams & design rationale
-│   └── validation_results.md          ← Cross-satellite testing results
-│
-├── hardware/
-│   ├── CIRCUIT_DESIGN.md              ← Complete circuit design (dual-layer)
-│   ├── schematics/
-│   │   ├── dual_layer_comparator.pdf  ← Layer 1 + Layer 2 schematic
-│   │   ├── mosfet_control.pdf         ← P-channel MOSFET switching circuit
-│   │   └── stm32_pinout.pdf           ← MCU GPIO/ADC mapping (13 panels)
-│   ├── Materials                      ← Space-ready Materials 
-│   
-│
-├── models/
-│   ├── training_artifacts/
-│   │   ├── RandomForest_power.pkl     ← Trained power prediction model
-│   │   └── RandomForest_voltage.pkl   ← Trained voltage prediction model
-│   └── metrics/
-│       ├── cross_validation_nepalisat.json  ← 5-panel validation
-│       └── cross_satellite_raavana.json     ← RAAVANA transfer test
-│
-├── data/
+├── .git/                              ← Git metadata
+├── data/                              ← Dataset folders
 │   ├── NEPALISAT/
-│   │   ├── panel_posX.csv             ← Training data (5 panels)
-│   │   ├── panel_negX.csv
-│   │   ├── panel_Y.csv
-│   │   ├── panel_posZ.csv
-│   │   └── panel_negZ.csv
-│   └── RAAVANA/
-│       └── validation_set.csv         ← Cross-satellite test data
-│
-├── notebooks/
-│   └── training_validation.ipynb      ← Model training + generalization tests
-│
-├── deploy/
+│   ├── RAAVANA/
+│   ├── TSURU/
+│   └── UGUISU/
+├── deploy/                            ← Generated C code & STM32 package
 │   ├── c_code/
-│   │   ├── power_model.c              ← Generated RF inference (121 KB)
-│   │   ├── voltage_model.c            ← Generated RF inference (369 KB)
-│   │   └── Makefile                   ← Build instructions
-│   │
+│   ├── README_DEPLOYMENT.md
 │   └── stm32_package/
-│       ├── eps_protection_final.c     ← State machine (4 states)
-│       ├── eps_protection_final.h
-│       ├── eps_main_deployment.c      ← Main loop (13 panels)
-│       ├── eps_bias_corrector.h       ← Online learning (EWMA)
-│       ├── eps_hardware_config.h      ← GPIO/ADC pin mappings
-│       
-│
-├── simulation/
-│   ├── fault_injection.py             ← Test scenarios (short, open, shade)
-│   
-│
-└── tests/
-    ├── test_model_inference.c         ← Inference accuracy tests
+├── docs/                              ← Reports & validation notes
+│   ├── CLEANUP_CHECKLIST.md
+│   ├── COMPREHENSIVE_MODEL_SYNTHESIS.md
+│   ├── LOGIC_VERIFICATION.md
+│   ├── SYNTHESIS_SUMMARY_NEXT_STEPS.md
+│   ├── UPDATED_STRATEGY.md
+│   └── references/
+├── figures/                           ← Figures used in docs/notebooks
+│   ├── comprehensive_evaluation_dashboard.png
+│   ├── correlation.png
+│   ├── generate_synthesis_visualizations.py
+│   ├── panels/
+│   ├── stages/
+│   └── synthesis/
+├── hardware/                          ← Circuit design & schematics
+│   ├── CIRCUIT_DESIGN.md
+│   ├── Components/
+│   └── schematics/
+├── Inference models generation/       ← Scripts for m2cgen / codegen
+│   └── generate_voltage_model_c.py
+├── models/                            ← Trained model artifacts & metrics
+│   ├── config/
+│   ├── metrics/
+│   ├── model chosen/
+│   └── model_training/
+├── notebooks/                         ← Training & validation notebooks
+│   ├── 01_data_exploration_modeling.ipynb
+│   └── 02_inference_deployment.ipynb
+├── README.md                          ← You are here
+└── simulation/                        ← Fault injection & simulation scripts
+    ├── fault_injection.c
+    ├── fault_injection.h
+    ├── simulation.mp4
+    └── simulation_matlab/
 ```
 
 ---
