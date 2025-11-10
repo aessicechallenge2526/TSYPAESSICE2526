@@ -1,0 +1,53 @@
+{
+  "panel": "+X",
+  "timestamp": 1762767734,
+  "power_model": {
+    "path": "deploy\\models\\power_rf_stage4simple_+X_1762767734.pkl",
+    "n_features": 10,
+    "feature_names": [
+      "Power_lag1",
+      "Power_lag2",
+      "Power_lag3",
+      "Power_lag6",
+      "Power_lag12",
+      "Power_diff_lag1",
+      "Power_diff_lag2",
+      "Power_diff_lag3",
+      "Power_diff_lag6",
+      "Power_diff_lag12"
+    ],
+    "n_estimators": 150,
+    "max_depth": 8,
+    "size_kb": 2498.056640625,
+    "metrics": {
+      "mae": 70600.30088851396,
+      "rmse": 137830.85028625396,
+      "res_mean": 36986.336588742866,
+      "res_std": 132775.5783130918,
+      "abs_res_p95": 348424.08805393893,
+      "abs_res_p99": 481544.4764453817
+    }
+  },
+  "voltage_model": {
+    "path": "deploy\\models\\voltage_rf_simple_+X_1762767734.pkl",
+    "n_features": 5,
+    "feature_names": [
+      "Volt_lag1",
+      "Volt_lag2",
+      "Volt_lag3",
+      "Volt_lag6",
+      "Volt_lag12"
+    ],
+    "n_estimators": 150,
+    "max_depth": 8,
+    "size_kb": 2512.3505859375,
+    "metrics": {
+      "mae": 146.46405619908964,
+      "rmse": 522.2951591009711,
+      "res_mean": 38.513917296619795,
+      "res_std": 520.873220078339,
+      "abs_res_p95": 729.7204857219585,
+      "abs_res_p99": 3229.608882341505
+    }
+  }
+}
